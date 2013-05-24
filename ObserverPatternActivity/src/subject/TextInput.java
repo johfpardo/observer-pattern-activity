@@ -38,6 +38,7 @@ public class TextInput extends Observable {
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String sTexto;
+        System.out.println("Ingrese su texto por favor: ");
         while(!(sTexto = br.readLine()).equals("**")) {
             ((TextInput)textInput).setText(sTexto);
         }
