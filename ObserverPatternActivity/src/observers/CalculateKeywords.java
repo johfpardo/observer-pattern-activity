@@ -17,7 +17,23 @@ public class CalculateKeywords implements Observer{
 
     @Override
     public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String[] s = ((String) o1).split("[\\s\\p{Punct}]");
+        int temp=0;
+        String[] keywords = {"Abstract","assert", "Boolean", "break",
+        "byte", "case", "catch", "char", "class", "const", "continue", 
+        "default", "do", "double", "else", "enum", "extends", "final", 
+        "finally", "float", "for", "goto", "if", "implements", "import",
+        "instanceof", "int", "interface", "long", "native","new", "package","private", "protected", "public", 
+        "return", "short", "static", "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
+        "transient", "try","void", "volatile", "while"};
+        
+        for(int i=0; i<s.length; i++) {
+            for(int j=0; j<keywords.length; j++)
+            if(s[i].equals(keywords[j])) {
+                temp++;
+                break;
+            }
+        }
+        System.out.println("keywords = "+temp);
     }
-    
 }
